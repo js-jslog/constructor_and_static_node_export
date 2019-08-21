@@ -7,4 +7,6 @@ class Class {
 
 Class.staticFunction = () => 'this is a static function';
 
-module.exports = Class;
+module.exports = staticParam => function ClassPartialApplicator(instanceParam) {
+  return new Class(staticParam, instanceParam);
+};

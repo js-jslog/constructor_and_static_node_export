@@ -1,4 +1,6 @@
-const Class = require('./class');
+const ClassForPartialApplication = require('./class');
+
+const Class = ClassForPartialApplication('static');
 
 test('Class exists', () => {
   expect(Class).toBeDefined();
@@ -15,7 +17,7 @@ test('Class contains a static function export', () => {
 });
 
 test('Class has a constructor which sets instance variables', () => {
-  const instance = new Class('one', 'two');
-  expect(instance.param1).toBe('one');
-  expect(instance.param2).toBe('two');
+  const instance = new Class('dynamic');
+  expect(instance.param1).toBe('static');
+  expect(instance.param2).toBe('dynamic');
 });
