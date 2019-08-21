@@ -1,3 +1,3 @@
-const index = function index() {};
+class Index {}
 
-module.exports = { index };
+module.exports = { Index };
