@@ -1,4 +1,4 @@
-const Class = require('./index');
+const Class = require('./class');
 
 test('Class exists', () => {
   expect(Class).toBeDefined();
