@@ -11,4 +11,5 @@ test('Index is a class', () => {
 
 test('Index contains a static function export', () => {
   expect(typeof Index.staticFunction).toBe('function');
+  expect(Index.staticFunction()).toBe('this is a static function');
 });
