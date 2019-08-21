@@ -8,3 +8,7 @@ test('index contains a constructor export', () => {
   expect(typeof index.Index).toBe('function');
   expect(typeof new index.Index()).toBe('object');
 });
+
+test('index contains a static function export', () => {
+  expect(typeof index.Index.staticFunction).toBe('function');
+});
