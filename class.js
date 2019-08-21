@@ -5,8 +5,13 @@ class Class {
   }
 }
 
-Class.staticFunction = () => 'this is a static function';
+const staticFunction = () => 'this is a static function';
 
-module.exports = staticParam => function ClassPartialApplicator(instanceParam) {
-  return new Class(staticParam, instanceParam);
+module.exports = function createPartiallyAppliedClass(staticParam) {
+  const ClassPartialApplicator = function ClassPartialApplicator(instanceParam) {
+    return new Class(staticParam, instanceParam);
+  };
+  ClassPartialApplicator.staticFunction = staticFunction;
+
+  return ClassPartialApplicator;
 };
